@@ -6,6 +6,69 @@
     - 문제를 해결하는 완성된 코드란 프로젝트 루브릭 3개 중 2개, 
     퀘스트 문제 요구조건 등을 지칭
         - 해당 조건을 만족하는 부분의 코드 및 결과물을 캡쳐하여 사진으로 첨부
+          
+P245
+```
+model = keras.Sequential([
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+```
+P249
+```
+inputs = keras.Input(shape=(3,), name="my_input")
+features = layers.Dense(64, activation='relu')(inputs)
+outputs = layers.Dense(10, activation='softmax')(features)
+model = keras.Model(inputs=inputs, outputs=outputs)
+```
+P256
+```
+class CustomerTicketModel(keras.Model):
+
+    def __init__(self, num_departments):
+        super().__init__()
+        self.concat_layer = layers.Concatenate()
+        self.mixing_layer = layers.Dense(64, activation="relu")
+        self.priority_scorer = layers.Dense(1, activation="sigmoid")
+        self.department_classifier = layers.Dense(
+            num_departments, activation="softmax")
+
+    def call(self, inputs):
+        title = inputs["title"]
+        text_body = inputs["text_body"]
+        tags = inputs["tags"]
+
+        features = self.concat_layer([title, text_body, tags])
+        features = self.mixing_layer(features)
+        priority = self.priority_scorer(features)
+        department = self.department_classifier(features)
+        return priority, department
+```
+P259
+```
+# 서브클래싱한 모델을 포함하는 함수형 모델 만들기
+
+class Classifier(keras.Model):
+
+    def __init__(self, num_classes=2):
+        super().__init__()
+        if num_classes == 2:
+            num_units = 1
+            activation = "sigmoid"
+        else:
+            num_units = num_classes
+            activation = "softmax"
+        self.dense = layers.Dense(num_units, activation=activation)
+
+    def call(self, inputs):
+        return self.dense(inputs)
+
+inputs = keras.Input(shape=(3,))
+features = layers.Dense(64, activation="relu")(inputs)
+outputs = Classifier(num_classes=10)(features)
+model = keras.Model(inputs=inputs, outputs=outputs)
+```
+
 
 - [X]  **2. 프로젝트에서 핵심적인 부분에 대한 설명이 주석(닥스트링) 및 마크다운 형태로 잘 기록되어있나요? (설명)**
     - [X]  모델 선정 이유
