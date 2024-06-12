@@ -11,8 +11,8 @@
 - [x]  **2. 프로젝트에서 핵심적인 부분에 대한 설명이 주석(닥스트링) 및 마크다운 형태로 잘 기록되어있나요? (설명)**
     - [x]  모델 선정 이유
     - [x]  Metrics 선정 이유
-    - [x]  Loss 선정 이유
-    <img width="419" alt="image" src="https://github.com/JAMES-JHPARK/aiffel/assets/82493052/3a0530e0-fa06-4467-83c5-0badc86093ce">
+    - [x]  Loss 선정 이유  
+    <img width="419" alt="image" src="https://github.com/JAMES-JHPARK/aiffel/assets/82493052/3a0530e0-fa06-4467-83c5-0badc86093ce"><br>
     모델 결과를 설명하면서 위의 내용들을 설명하였음.
 
 - [x]  **3. 체크리스트에 해당하는 항목들을 모두 수행하였나요? (문제 해결)**
@@ -27,4 +27,6 @@
     - [x]  아쉬운 점
     - [x]  느낀 점
     - [x]  어려웠던 점
-    <img width="889" alt="image" src="https://github.com/JAMES-JHPARK/aiffel/assets/82493052/90ec5756-4218-4aa5-b2ef-c225ac5b6c35">
+    <img width="889" alt="image" src="https://github.com/JAMES-JHPARK/aiffel/assets/82493052/90ec5756-4218-4aa5-b2ef-c225ac5b6c35">  
+---
+리뷰어: 이정희
