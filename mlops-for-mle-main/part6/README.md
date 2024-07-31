@@ -19,3 +19,8 @@ $ make dependency-clean
 ```bash
 $ python download_model --run-id `<RUN-ID>`
 ```
+
+
+### for MAC M1
+
+[edit] amd64/python ~ -> arm64v8 in Dockerfile
